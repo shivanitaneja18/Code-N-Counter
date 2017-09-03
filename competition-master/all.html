@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+      <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<!--    <link rel="stylesheet" href="assets/style.css">-->
+  <link rel="stylesheet" href="assets/bill.css">
+   <script src="js/jquery-3.2.1.min.js"></script>
+   <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/module.js"></script>
+    <script src="js/factory.js"></script>
+    <script src="js/billcontroller.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+   <img src="images/Loading_icon.gif" class="gif" ng-hide="gif" alt="">
+    <div id="container" ng-hide="body">
+         <nav class="navbar navbar-fixed-top" role="navigation">
+<div class="container-fluid">
+  <!-- add header -->
+  <div class="navbar-header">
+
+       
+      <a class="navbar-brand" href="index.html"><img src="flogo.jpg" class="img-responsive img-square" width="50" height="50"> </a>
+      <a class="navbar-brand navbar-bg logoname" href="index.html">Floreciente</a>
+  </div>
+
+  
+  <!-- menu items -->
+  <div class="collapse navbar-collapse" id="navbar1">
+        <ul class="nav navbar-nav navbar-right">
+           <button class="btn btn-default btn-md pull-right" onclick="window.location='../index.html'">Logout</button>
+            
+        </ul>
+    </div>
+   
+</div>
+</nav>
+        <div id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="listdata">
+                            <ul>
+                                <li ng-repeat="i in arr" ng-click="modal(i)" data-toggle="modal" data-target="#myModal">
+                                   <div class="image">
+                                    <img src="{{i.ImageURL}}" alt="">
+                                    </div>
+                                    <div class="aboutdata"></div>
+                                    <span>{{i.Title}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <span>details:</span>
+      </div>
+      <div class="modal-body">
+      <div style = "border: 1px solid lightgrey; padding: 10px 0px" ng-repeat="i in person" >
+          <span>Name:{{i.Name}}</span>
+          <br>
+          <span>Phoneno:{{i.PhoneNo}}</span>
+          <br>
+          <span>Address:{{i.Address}}</span>
+          <br>
+          <a href="{{i.LinkURL}}">{{i.LinkURL}}</a>
+          </div>
+      </div>
+      <div class="modal-footer">
+       <button class="btn btn-info btn-lg" ng-click="message(1)">message</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+    </div>
+</body>
+</html>

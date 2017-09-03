@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+   <script src="js/jquery-3.2.1.min.js"></script>
+   <script src="bootstrap/js/bootstrap.min.js"></script>
+   <script src="js/angular.min.js"></script>
+   <script src="js/module.js"></script>
+   <script src="js/factory.js"></script>
+   <script src="js/controller.js"></script>
+  
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+   <nav class="navbar navbar-fixed-top" role="navigation">
+<div class="container-fluid">
+  <!-- add header -->
+  <div class="navbar-header">
+
+       
+      <a class="navbar-brand" href="index.html"><img src="flogo.jpg" class="img-responsive img-square" width="50" height="50"> </a>
+      <a class="navbar-brand navbar-bg logoname" href="index.html">Floreciente</a>
+  </div>
+
+  
+  <!-- menu items -->
+  <div class="collapse navbar-collapse" id="navbar1">
+        <ul class="nav navbar-nav navbar-right">
+           <button class="btn btn-default btn-md pull-right" onclick="window.location='../index.html'">Logout</button>
+            
+        </ul>
+    </div>
+   
+</div>
+</nav>
+        <div id="content">
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="col-lg-12 myimage">
+                    <div class="shadow"></div>
+                    <div class="heading">
+                    <h1>your service expert</h1>
+                    <h2>Get instant access to reliable and affordable services</h2>
+                    </div>
+                    <div class="box">
+<!--
+                      <select class="chat btn btn-info btn-lg" >
+  <option  class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Volvo</option>
+  <option value="saab" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Saab</option>
+  <option value="mercedes" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Mercedes</option>
+  <option value="audi" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Audi</option>
+</select>
+-->
+<!--
+                     <div class="drop">
+                         <span class="know">people</span>
+                         <div class="menu">
+                             <ul>
+                                 <li>amit</li>
+                                 <li>ram</li>
+                                 <li>sham</li>
+                                 <li>naam</li>
+                             </ul>
+                         </div>
+                     </div>
+-->
+                     <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">people
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li ng-repeat="i in user" ng-click="return(i)" ><a href="#"  data-toggle="modal" data-target="#myModal">{{i.FirstName}}</a></li>
+<!--
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JavaScript</a></li>
+-->
+  </ul>
+</div>
+                      
+                       <span class="people">nearby people</span>
+                        <input type="text" class="search" ng-model="search" ng-change="check()" placeholder="search for a service">
+                        <span class="facility">E.g. Salon at Home, Plumber, Wedding Photographer</span>
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="user-service">
+                            <ul>
+                                <li ng-click="next(4)">
+                                    <div class="image">
+                                        <img src="images/home-repair1.png" alt="">
+                                    </div>
+                                    <div class="about">
+                                        <span>home services</span>
+                                    </div>
+                                </li >
+                                <li ng-click="next(2)">
+                                    <div class="image">
+                                        <img src="images/beauty.png" alt="">
+                                    </div>
+                                    <div class="about">
+                                        <span>health & fitness</span>
+                                    </div>
+                                </li>
+                                <li ng-click="next(1)"> 
+                                    <div class="image">
+                                        <img src="images/bill.png" alt="">
+                                    </div>
+                                    <div class="about">
+                                        <span>bill payments</span>
+                                    </div>
+                                </li>
+                                <li ng-click="next(3)">
+                                    <div class="image">
+                                        <img src="images/BusinessMen.png" alt="">
+                                    </div>
+                                    <div class="about">
+                                        <span>repairs</span>
+                                    </div>
+                                </li>
+                                 <li ng-click="next(5)">
+                                    <div class="image">
+                                        <img src="images/food.jpg" alt="">
+                                    </div>
+                                    <div class="about">
+                                        <span>food and shopping</span>
+                                    </div>
+                                </li>
+                                 <li ng-click="next(6)">
+                                    <div class="image">
+                                        <img src="images/bus.png" alt="">
+                                    </div>
+                                    <div class="about">
+                                        <span>transport facility</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="shifting">
+                            <span class="head" ng-hide="span">shifting homes</span>
+                            <ul>
+                                <li ng-repeat="i in shift | filter :search ">
+                                    <div class="image-shift">
+                                        <img src="{{i.ImageURL}}" alt="">
+                                    </div>
+                                    <div class="about-shift">
+                                   <span>{{i.Title}}</span>
+                                    </div>
+                                </li>
+<!--
+                                  <li>
+                                    <div class="image-shift">
+                                        <img src="images/shift2.webp" alt="">
+                                    </div>
+                                    <div class="about-shift">
+                                   <span>pest control</span>
+                                    </div>
+                                </li>
+                                  <li>
+                                    <div class="image-shift">
+                                        <img src="images/shift3.webp" alt="">
+                                    </div>
+                                    <div class="about-shift">
+                                   <span>television installation</span>
+                                    </div>
+                                </li>
+                                  <li>
+                                    <div class="image-shift">
+                                        <img src="images/shift4.webp" alt="">
+                                    </div>
+                                    <div class="about-shift">
+                                   <span>ro or water purifier repair</span>
+                                    </div>
+                                </li>
+-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                        <div class="row">
+                    <div class="col-sm-12">
+                        <div class="shifting">
+                            <span class="head" ng-hide="span">health & fitness</span>
+                            <ul>
+                                <li ng-repeat="i in health |filter : search">
+                                    <div class="image-shift">
+                                        <img src="{{i.ImageURL}}" alt="">
+                                    </div>
+                                    <div class="about-shift">
+                                   <span>{{i.Title}}</span>
+                                    </div>
+                                </li>
+<!--
+                                  <li>
+                                    <div class="image-shift">
+                                        <img src="images/home2.webp" alt="">
+                                    </div>
+                                    <div class="about-shift">
+                                   <span>pest control</span>
+                                    </div>
+                                </li>
+                                  <li>
+                                    <div class="image-shift">
+                                        <img src="images/home3.webp" alt="">
+                                    </div>
+                                    <div class="about-shift">
+                                   <span>television installation</span>
+                                    </div>
+                                </li>
+                                  <li>
+                                    <div class="image-shift">
+                                        <img src="images/home4.webp" alt="">
+                                    </div>
+                                    <div class="about-shift">
+                                   <span>ro or water purifier repair</span>
+                                    </div>
+                                </li>
+-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                        <div class="row">
+                    <div class="col-sm-12">
+                        <div class="shifting">
+                            <span class="head" ng-hide="span">repairs</span>
+                            <ul>
+                                <li ng-repeat="i in repair | filter : search">
+                                    <div class="image-shift">
+                                        <img src="{{i.ImageURL}}" alt="">
+                                    </div>
+                                    <div class="about-shift">
+                                   <span>{{i.Title}}</span>
+                                    </div>
+                                </li>
+<!--
+                                  <li>
+                                    <div class="image-shift">
+                                        <img src="images/repair2.webp" alt="">
+                                    </div>
+                                    <div class="about-shift">
+                                   <span>pest control</span>
+                                    </div>
+                                </li>
+                                  <li>
+                                    <div class="image-shift">
+                                        <img src="images/repair3.webp" alt="">
+                                    </div>
+                                    <div class="about-shift">
+                                   <span>television installation</span>
+                                    </div>
+                                </li>
+                                  <li>
+                                    <div class="image-shift">
+                                        <img src="images/repair4.webp" alt="">
+                                    </div>
+                                    <div class="about-shift">
+                                   <span>ro or water purifier repair</span>
+                                    </div>
+                                </li>
+-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+          <ul><li  data-toggle="modal" data-target="#myModal">hello</li></ul>
+                           <select class="chat">
+  <option value="volvo" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" >Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+-->
+           <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{FirstName}}</h4>
+        <span>id:{{id}}</span>
+      </div>
+      <div class="modal-body">
+          <p ng-repeat="i in para">{{i.msg}}</p>
+        <textarea  cols="30" rows="10" style="width:100%" ng-model="msgtxt"></textarea>
+      </div>
+      <div class="modal-footer">
+       <button class="btn btn-info btn-lg" ng-click="message(1)">message</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div> 
+        <div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Ayush</h4>
+<!--
+                          <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">subject
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#" >complaint</a></li>
+    <li><a href="#">food service</a></li>
+    
+  </ul>
+</div>
+-->
+      <h5>pending complaints/request</h5>
+    <div ng-repeat="i in pending">
+        <span>{{i.Subject}}</span>
+        <br>
+        <span>{{i.Body}}</span>
+        <p>{{i.Status}}</p>
+          </div> 
+     
+        
+      </div>
+      <div class="modal-body">
+          <span style="font-size:18px">subject:</span>
+            <select ng-model="text">
+  <option value="Complaint">Complaint</option>
+  <option value="Left-Over-Food">Left-Over-Food</option>
+  
+</select>
+    
+        <textarea  cols="30" rows="10" style="width:100%" ng-model="views"></textarea>
+      </div>
+      <div class="modal-footer">
+       <button class="btn btn-info btn-lg" ng-click="complaint()">message</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div> 
+    </div>
+    
+</body>
+</html>

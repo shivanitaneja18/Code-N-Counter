@@ -1,0 +1,96 @@
+body{
+    margin : 20px 0px;
+} 
+.icon-bar{
+  background-color:#d6d6d6;
+}
+
+
+.navbar-fixed-top{
+    background-color:#ffffff;
+}
+.img-responsive{
+    margin-top: -7px;
+    margin-left: 34px;
+}
+ 
+#top-shadow {
+position: fixed;
+top: 0;
+left: 20px;
+width: 100%;
+height: 60px;
+z-index: 999;
+-webkit-box-shadow: 0 8px 8px rgba(211, 211, 211, 0.8);
+-moz-box-shadow: 0 8px 8px rgba(211, 211, 211, 0.8);
+box-shadow: 0 8px 8px rgba(211, 211, 211, 0.8);
+display: none;
+}
+
+.navbar.affix{  
+top:0; 
+width:100%;
+}
+
+ 
+.navbar{    
+z-index:1000;  
+}
+.navbar-right{
+    color: #ff0000;
+    font-family:ff-clan-web-pro,"Helvetica Neue",Helvetica,sans-serif;
+    font-weight:bold;
+}
+ 
+.pull-right{
+    padding-right: 8px;
+    margin-right: 10px;
+    margin-top:10px;
+}
+a.navbar-brand.navbar-bg.logoname {
+    font-size: 35px;
+    font-family: "Sans",Verdana,"sans-serif";
+    color: #000000;
+}
+.gif{
+    position: absolute;
+    top: 27%;
+    left: 30%;
+}
+#header .logo span{
+    font-size: 24px;
+    font-weight: bold;
+}
+#header .foruser{
+    margin-left: 45px;
+    margin-top: 5px;
+}
+#header .foruser ul li{
+    display: inline-block;
+    padding: 0px 10px;
+    color: black;
+    
+}
+#header .foruser ul li a{
+    color: black;
+    text-transform: capitalize;
+    
+    color: #666;
+}
+#content .listdata {
+    margin-right: -70px;
+}
+#content .listdata ul li{
+    display: inline-block;
+    width: 50%;
+    margin: 30px 0px;
+}
+#content .listdata .image{
+    width: 72%;
+}
+#content .listdata .image img{
+    width: 100%;
+}
+#content .person{
+    border: 1px solid lightgrey;
+}
